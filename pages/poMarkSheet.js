@@ -44,16 +44,16 @@ clickingMissRadioButton() {
 },
 
 selectingCountry() {
-    //I.click(this.markSheetSignUpForm.selectingCountry);
     I.click(this.markSheetSignUpForm.selectUS);
 },
 
 termsAndConditions() {
-    I.click(this.markSheetSignUpForm.agreeTemsCheckbox);
+    I.checkOption(this.markSheetSignUpForm.agreeTemsCheckbox);
 },
 
 signUpButton() {
     I.click(this.markSheetSignUpForm.signUpCTA);
+    I.seeInCurrentUrl('/signup');
 },
 
 }

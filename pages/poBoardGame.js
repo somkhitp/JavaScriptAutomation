@@ -29,12 +29,10 @@ selectingYearPublishedMax(year) {
 },
 
 selectingMinPlayingTime() {
-    //I.click(this.boardGame.playingTimeMin, 3);
     I.checkOption(this.boardGame.selectingMinTime);
 },
 
 selectingMaxPlayingTime() {
-    //I.click(this.boardGame.playingTimeMax, 3);
     I.checkOption(this.boardGame.selectingMaxTime);
     },
 
@@ -44,7 +42,6 @@ submitCTA() {
 
 afterSubmit() {
     I.waitForElement(this.boardGame.newLink, 20)
-        //I.seeElement(this.boardGame.newLink);
     },
 
 }

@@ -6,15 +6,17 @@ module.exports = {
 
 passionTea: {
     homePage: "http://www.practiceselenium.com/",
-    titleOne: "//*[contains(text(),'passionate about tea')]",
+    titleOne: "//*[contains(text(),'passionate about tea.')]",
     titleTwo: "//*[contains(text(),'We believe the calming sensation that comes from drinking tea is universal')]",
     titleThree: "//*[contains(text(),'The Passion Tea Company team is just as diverse as its flavors.')]",
+    herbalTeaText: "//span[contains(text(),'Herbal Tea')]",
+    forMoreThan: "//*[contains(text(),'For more than 25 years, Passion Tea Company has')]",
 
 passionClickableLinks: {
     herbalTeaButton: "//*[contains(@class,'wsb-element-button')][2]",
     looseTeaButton: "//*[contains(@class,'wsb-element-button')][3]",
     flavoredTeaButton: "//*[contains(@class,'wsb-element-button')][1]",
-    ourPassion: ".wsb-navigation-rendered-top-level-menu:nth-child(2) li:nth-child(2)"
+    ourPassion: "//a[contains(text(),'Our Passion')]"
 },
 
     redirectLink: "http://www.practiceselenium.com/menu.html"
@@ -48,6 +50,7 @@ homePageURL() {
 
 redirectURL() {
   I.amOnPage(this.passionTea.redirectLink);
+  I.seeInCurrentUrl('/menu.html');
 },
 
 onCheckoutPage() {
@@ -66,6 +69,14 @@ seeTitleThree() {
   I.seeElement(this.passionTea.titleThree);
 },
 
+seeingHerbalTeaText() {
+  I.seeElement(this.passionTea.herbalTeaText);
+},
+
+seeingMoreThan() {
+  I.seeElement(this.passionTea.forMoreThan);
+},
+
 seeHerbalTea() {
   I.seeElement(this.passionTea.passionClickableLinks.herbalTeaButton);
 },
@@ -80,6 +91,7 @@ seeFlavoredTea() {
 
 clickingHerbalTea() {
   I.click(this.passionTea.passionClickableLinks.herbalTeaButton);
+  I.seeInCurrentUrl('/menu.html');
 },
 
 clickingLooseTea() {
@@ -96,6 +108,7 @@ ourPassionText() {
 
 clickingOurPassion() {
   I.click(this.passionTea.passionClickableLinks.ourPassion);
+  I.seeInCurrentUrl('/our-passion');
 },
 
 verifyMenuTitleOne() {
@@ -156,6 +169,7 @@ cidNumber(number) {
 
 orderButtonClick() {
   I.click(this.billingInformation.placeOrderCTAButton);
+  I.seeInCurrentUrl('/menu.html');
 },
 
 }

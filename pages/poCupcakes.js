@@ -12,6 +12,7 @@ cupCake: {
     instanceText: "//*[contains(text(),'Cupcake ipsum dolor sit amet')]",
     instanceTextTwo: "//*[contains(text(),'Cupcake ipsum dolor sit')]",
     generateButton: "//button[@id='generate_button']",
+    copyToClipBoard: "//button[@id='copy_button']",
 
 },
 
@@ -45,6 +46,10 @@ seeingTwoInstances() {
 
 clickingGenerateButton() {
     I.click(this.cupCake.generateButton);
-}
+},
+
+dontSeeCopyToClipBoard() {
+    I.dontSeeElement(this.cupCake.copyToClipBoard);
+},
 
 }

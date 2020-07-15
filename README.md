@@ -27,11 +27,11 @@ Now install Selenium-Standalone.
   Make sure Selenium and drivers are correctly placed in the environment variable PATH in your directory. More info on how to install it here: https://zwbetz.com/download-chromedriver-binary-and-add-to-your-path-for-automated-functional-testing/
 
 
-  OPTIONAL Helers:
+  **OPTIONAL Helpers**:
   I like to use Allure for my reports(it is already configured in the codecept.conf.js), you can install using npm: npm install -g allure-commandline --save-dev
 
 
-To test:
+**To test**:
 
 Currently the tests are running headless. If you want to see a visual of the tests being run, just comment out the args: ['--headless', '--disable-gpu', '--no-sandbox'] located in the desiredCapabilities in the codecept.conf.js file
 
@@ -57,5 +57,7 @@ npx codeceptjs run --grep '@mark'
 Game board test:
 npx codeceptjs run --grep '@board'
 
-Conclusion:
+**NOTE**: If runningh in separate terminal, you do not need to use '' characters in front and back of the tag. This is only applies whren running the test in terminal within the IDE.
+
+**Conclusion**:
 I could of went with the generic style of code writing as seen in the codecept.io site, but I wanted to make the code look more cleaner by using diferent folder structures. This helps me know if there are any duplicated codes. This helps out in the long run when running multiple tests of the same path but for different features. I can simply just reuse a pageobject instead of duplcating the same code. I did find there were a few scenarios that had me trying to create the shortest locator to use, which was the time consuming part, but overall I had a lot of fun doing this challenge. Day 1 took me a while to ramp up on the requirements of programs needed and fiel structures. The best feeling in the world is seeing an automation script run successfully per user acceptance!!!
