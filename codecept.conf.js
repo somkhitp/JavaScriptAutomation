@@ -9,7 +9,7 @@ exports.config = {
       keepBrowserState: true,
       desiredCapabilities: {
         chromeOptions: {
-        //args: ['--headless', '--disable-gpu', '--no-sandbox']
+        args: ['--headless', '--disable-gpu', '--no-sandbox']
       },
       }
     }
