@@ -1,0 +1,28 @@
+{
+  "name": "techtest",
+  "version": "1.0.0",
+  "description": "Automation Challenge",
+  "main": "./tests/*.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/somkhitp/techTEST.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/somkhitp/techTEST/issues"
+  },
+  "homepage": "https://github.com/somkhitp/techTEST#readme",
+  "dependencies": {
+    "codeceptjs": "^2.6.6",
+    "selenium-webdriver": "^4.0.0-alpha.7",
+    "vue-radio-toggle-buttons": "^0.1.0"
+  },
+  "devDependencies": {
+    "@wdio/selenium-standalone-service": "^6.1.14",
+    "webdriverio": "^6.2.0"
+  }
+}

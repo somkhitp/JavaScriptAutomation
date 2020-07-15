@@ -1,0 +1,70 @@
+When I travel to http://www.practiceselenium.com/ as a guest:
+ - I see "We're passionate about tea.", "For more than 25 years, Passion Tea Company has revolutionized the tea industry", and "Herbal Tea"
+ - I see 3 clickable/active buttons/links with the text, "See Collection"
+ - Clicking the first "See Collection" button/link takes me to http://www.practiceselenium.com/menu.html
+
+ When I travel to http://www.practiceselenium.com/ as a guest:
+ - I see a clickable link, "Our Passion"
+ - Clicking on "Our Passion" takes me to http://www.practiceselenium.com/our-passion.html
+ - I see "We believe the calming sensation that comes from drinking tea is universal"
+ - I see "The Passion Tea Company team is just as diverse as its flavors."
+
+ When I travel to http://www.practiceselenium.com/menu.html as a guest:
+ - I see "Green tea is made from the leaves from Camellia sinensis"
+ - I see "Red tea is actually a South African herb cultivated only in the mountains"
+ - I see 2 "Check Out" buttons
+ - Clicking the first "Check Out" button brings me to http://www.practiceselenium.com/check-out.html
+ - I see "Enter your billing information"
+ - I fill in the "E-mail" field with "john.smith@test.com"
+ - I fill in the "Name" field with "John Smith"
+ - I fill in the "Address" text box with 
+   "123 Read Ave.
+    New Orleans, LA 70123"
+ - I select "Visa" from the "Card Type" selection box
+ - I fill in the "Card Number" field with "1234 5678 9012 3456"
+ - I fill in the "Cardholder Name" field with "John Smith"
+ - I fill in the "Verification Code" field with "123"
+ - Clicking the "Place Order" button brings me to http://www.practiceselenium.com/menu.html?
+
+ When I travel to https://marksheet.io/html-forms.html as a guest:
+ - I see "Example: a complete signup form"
+ - I select "Miss" from a "Title" radio selection
+ - I fill in the "First name" field with "John"
+ - I fill in the "Last name" field with "Smith"
+ - I fill in the "Email" field with "john.smith@test.com"
+ - I fill in the "Phone number" field with "555-5555"
+ - I fill in the "Password" field with "password"
+ - I fill in the "Confirm your password" field with "password"
+ - I select "United States" from the "Country" dropdown
+ - I check off "I agree to the terms and conditions"
+ - Clicking "Sign Up" takes me to https://marksheet.io/signup (403)
+
+When I travel to http://www.cupcakeipsum.com as a guest:
+ - I see "Cupcake Ipsum - Sugar-coated Lorem Ipsum Generator"
+ - I see "Paragraphs" has "5" filled in
+ - I select "Short" radio button
+ - I check off 'Start with "Cupcake ipsum dolor sit amet"'
+ - I see 1 instance of "Cupcake ipsum dolor sit amet" on the page
+ - I do not see a "Copy to Clipboard" button
+ - I click "Generate"
+ - I see 2 instances of "Cupcake ipsum dolor sit amet" on the page
+
+When I travel to https://boardgamegeek.com/advsearch/boardgame as a guest:
+ - I fill in the "Title" field with "Harry Potter and the Sorcerer's Stone Trivia Game"
+ - I fill in the "Year Published Minimum" field with "1999"
+ - I fill in the "Year Published Maximum" field with "2000"
+ - I select "15 minutes" from the "Min Playing Time" drop down
+ - I select "1.5 hours" from the "Max Playing Time" drop down
+ - Clicking "Submit" takes me to a new page
+ - I see a "Harry Potter and the Sorcerer's Stone Trivia Game (2000)" link on the page
+
+When I travel to https://gluons.github.io/vue-radio-toggle-buttons as a guest:
+ - I see "Radio toggle buttons for Vue", "Demo", and "Selected Item:"
+ - I click the "Value 4" radio button
+ - I see "Selected Item: Value 4"
+ - I click the "Value 5" radio button
+ - I see "Selected Item: Value 5"
+ - I click the "Value 1" radio button
+ - I see "Selected Item: Value 1"
+ - I click the "Value 2" radio button
+ - I see "Selected Item: Value 2"
