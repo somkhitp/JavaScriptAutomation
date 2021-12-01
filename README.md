@@ -34,7 +34,7 @@ Before running the tests, make sure you are in the `root directory` of the repo 
 To run all tests in one run, use the command `npx codeceptjs run`
 
 To run a single file: `npx codeceptjs run fileNameOfYourTest.js`
-Example: `npx codeceptjs run tests/admin/admin_test.js` (All the test files are in the folder `tests` and are organized according to feature)
+Example: `npx codeceptjs run tests/admin/boardGame_test.js` (All the test files are in the folder `tests` and are organized according to feature)
 
 If you want to see a detailed description that will help with debuggin in the test, add `--verbose` to the end of the command for each test. Example: `npx codeceptjs run --verbose`
 
