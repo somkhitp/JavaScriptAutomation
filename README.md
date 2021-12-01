@@ -1,49 +1,52 @@
-# techTEST
-Automation Challenge
-
-******Automation scripts running webdriverIO using CodeceptJS framework. We will also be using Selenium-standalone.******
+Automation codes using CodeceptJS
+----------------------------------
+**Automation scripts running webdriverIO using CodeceptJS framework. We will also be using Selenium-standalone.**
+URL to know more about CodeceptJS: https://codecept.io/
 
 **Required**:
 
-CD to the directory of your folder(example: C:\Users\random\Desktop/AutomationTests)
+CD to the directory of your folder or where you cloned the repo(example: `\Users\git\/ClonedRepo`)
 - Must have latest version of Java.
 - Install latest version of NodeJS: https://nodejs.org/en/download/
-- Install CodeceptJS (website can be found here for more information): https://codecept.io/
-  - Install in terminal enter: npm install codeceptjs
-  
-CD to the directory on where you cloned the repo and initialize CodeceptJS (e.g. C:\Users\random\Desktop/AutomationTests):
-  - Type: npx codeceptjs init
-  - Answer questions. Agree on defaults, when asked to select helpers choose Webdriver
+  - Or use the following command in terminal: `sudo npm install n -g` and then `sudo n latest` to install the latest version on NodeJS
 
-Now install Selenium-Standalone.
-  - Make sure you have selenium downloaded https://www.selenium.dev/downloads/ if you do not have it on your machine..
-  - in terminal, type: npm i @wdio/selenium-standalone-service --save-dev
-  - Any configurations should already be set in the codecept.conf.js file.
+  ***Getting Started***
+  **CD to the directory of the cloned Repo**
+- Step 1. enter the command `npm init -y` (This creates the package.json file)
 
-  If running with browser:
-  Install chromedriver: https://chromedriver.chromium.org/downloads
-  (Optional Firefox) Gekodriver: https://firefox-source-docs.mozilla.org/testing/geckodriver/
+- Step 2. enter the command `npm install codeceptjs webdriverio --save -dev` (This creates the node_modules folder, which will be added to gitignore file)
 
-  Make sure Selenium and drivers are correctly placed in the environment variable PATH in your directory. More info on how to install it here: https://zwbetz.com/download-chromedriver-binary-and-add-to-your-path-for-automated-functional-testing/
+- Step 3. enter the command `npx codeceptjs init` to initialize CodeceptJS (Select `Webdriver` and press enter to everything else)
+
+- Step 4. enter the command `npm i @wdio/selenium-standalone-service --save -dev` (This installs Selenium Webdriver and will automatically run each time a test is begins to execute)
 
 
-  **OPTIONAL Helpers**:
-  I like to use Allure for my reports(it is already configured in the codecept.conf.js), you can install using npm: npm install -g allure-commandline --save-dev
+  ***OPTIONAL Helpers***:
+  I like to use Allure for my reports(it is already configured in the codecept.conf.js), you can install using npm: `npm install -g allure-commandline --save-dev`
 
 
-**To test**:
+**To Test**:
 
-Currently the tests are running headless. If you want to see a visual of the tests being run, just comment out the args: ['--headless', '--disable-gpu', '--no-sandbox'] located in the desiredCapabilities in the codecept.conf.js file
+Currently the tests are running headless. If you want to see a visual of the tests being run, just comment out the args: `['--headless', '--disable-gpu', '--no-sandbox']` located in the `desiredCapabilities` in the `codecept.conf.js` file. Just remember to uncomment before merging your PR to master
 
-Before running the tests, make sure you are in the root directory of the reppo in the terminal or CLI.
+Before running the tests, make sure you are in the `root directory` of the repo in the terminal or CLI. For this repo, the root directory is `codeceptAutomation`
 
-To run all tests in one run, use the command npx codeceptjs run
+To run all tests in one run, use the command `npx codeceptjs run`
 
-If you want to see a detailed description in the test, add --verbose to the end of the command for each test.
+To run a single file: `npx codeceptjs run fileNameOfYourTest.js`
+Example: `npx codeceptjs run tests/admin/admin_test.js` (All the test files are in the folder `tests` and are organized according to feature)
 
-If you want to have allure report added, simply add --plugins allure at the end of the command. Once the tests are complete, just enter allure serve output and a new chrome window will open display the results of the test. (NOTE: in the output folder, I like to delete the contents in the folder before running a new test for the day. Helps declutter the allure reporting).
+If you want to see a detailed description that will help with debuggin in the test, add `--verbose` to the end of the command for each test. Example: `npx codeceptjs run --verbose`
 
-You can also run each test one at a time using the --grep command followed by whichever @tag was used in the test file. More below:
+If you want to see the steps associated with the test, include `--steps` Example: `npx codeceptjs run --steps`
+
+You can also run each test one at a time using the `--grep` command followed by whichever `@tag` was used in the test file. More below:
+Example: `npx codeceptjs run --grep @tea`
+
+
+You can combine these commands. Example: `npx codeceptjs run --verbose --grep @test --plugins allure`
+
+**For a list of all commands: https://codecept.io/commands/#run** More below:
 
 To run the Tea scenarios, you npx codeceptjs run --grep '@tea'
 To run with with all details and report: npx codeceptjs run --grep '@tea' --verbose --plugins allure
@@ -57,7 +60,6 @@ npx codeceptjs run --grep '@mark'
 Game board test:
 npx codeceptjs run --grep '@board'
 
-**NOTE**: If runningh in separate terminal, you do not need to use '' characters in front and back of the tag. This is only applies whren running the test in terminal within the IDE.
+If you want to have allure report added, simply add `--plugins allure` at the end of the command. Once the tests are complete, just enter allure serve output and a new chrome window will open display the results of the test. (NOTE: in the output folder, I like to delete the contents in the folder before running a new test for the day. Helps declutter the allure reporting). Example: `npx codecepjs run --plugins allure`
 
-**Conclusion**:
-I could of went with the generic style of code writing as seen in the codecept.io site, but I wanted to make the code look more cleaner by using diferent folder structures. This helps me know if there are any duplicated codes. This helps out in the long run when running multiple tests of the same path but for different features. I can simply just reuse a pageobject instead of duplcating the same code. I did find there were a few scenarios that had me trying to create the shortest locator to use, which was the time consuming part, but overall I had a lot of fun doing this challenge. Day 1 took me a while to ramp up on the requirements of programs needed and fiel structures. The best feeling in the world is seeing an automation script run successfully per user acceptance!!!
+  **- One thing to note when running with `--plugins allure`, the report will be saved in the `allureReports` folder. For file storage space purposed, I added this folder to the .gitignore folder, but it will still be saved in your local folder. You have to manually clear the contents in this folder if you don't want the extra clutter. Also the end of test results and any screenshot failures are saved in the `./output` folder. This is also being added to `.gitignore` file. So once again it is your responsibility to clear the contents in that folder if you do not want that extra clutter. I normally clear them out at the end of the week.**
